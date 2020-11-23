@@ -1,0 +1,24 @@
+.equ FPIOA_IO_MAX, 48
+
+.equ FPIOA_IO_CFG_SIZE, 4
+
+# IO register masks
+.equ FPIOA_IO_CFG_PD, 0x00020000
+.equ FPIOA_IO_CFG_PU, 0x00010000
+.equ FPIOA_IO_CFG_CH_SEL, 0x000000FF
+
+# FPIOA functions
+.equ FPIOA_FUNC_GPIO0, 56
+
+# Function configs
+.equ FPIOA_FUNC_CFG_GPIO, 0x00901f00
+
+# FPIOA pull mode
+.equ FPIOA_PULL_NONE, 0
+.equ FPIOA_PULL_DOWN, 1
+.equ FPIOA_PULL_UP, 2
+
+# RGB led io mapping
+.equ FPIOA_RGB_RED, 13
+.equ FPIOA_RGB_GREEN, 12
+.equ FPIOA_RGB_BLUE, 14
