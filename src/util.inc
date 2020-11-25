@@ -1,0 +1,1 @@
+.equ USEC_IN_SEC, 1000000
