@@ -1,12 +1,12 @@
 .section .text
-.balign 8
-.global asm_fpioa_get_io_by_function, asm_fpioa_set_function_raw, asm_fpioa_set_io_pull
+.balign 4
 
 .include "mmap.inc"
 .include "fpioa.inc"
 
 # a0 - function
 # Returns: io number or -1
+.globl asm_fpioa_get_io_by_function
 asm_fpioa_get_io_by_function:
     addi sp, sp, -16
     sd ra, 8(sp)
@@ -39,6 +39,7 @@ asm_fpioa_get_io_by_function:
 
 # a0 - io number
 # a1 - function
+.globl asm_fpioa_set_function_raw
 asm_fpioa_set_function_raw:
     addi sp, sp, -16
     sd ra, 8(sp)
@@ -62,6 +63,7 @@ asm_fpioa_set_function_raw:
 # a0 - io number
 # a1 - pull mode
 # Returns: 0 if successful, -1 otherwise
+.globl asm_fpioa_set_io_pull
 asm_fpioa_set_io_pull:
     addi sp, sp, -16
     sd ra, 8(sp)

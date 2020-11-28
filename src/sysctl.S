@@ -1,10 +1,10 @@
 .section .text
-.balign 8
-.global asm_sysctl_clk_enable
+.balign 4
 
 .include "mmap.inc"
 .include "sysctl.inc"
 
+.globl asm_sysctl_clk_enable
 asm_sysctl_clk_enable:
     addi sp, sp, -16
     sd ra, 8(sp)

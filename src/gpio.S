@@ -1,12 +1,12 @@
 .section .text
-.balign 8
-.global gpio_setup, asm_gpio_set_drive_mode, asm_gpio_set_pin, asm_gpio_set_bit
+.balign 4
 
 .include "mmap.inc"
 .include "gpio.inc"
 .include "fpioa.inc"
 .include "sysctl.inc"
 
+.globl gpio_setup
 gpio_setup:
     addi sp, sp, -16
     sd ra, 8(sp)
@@ -52,6 +52,7 @@ gpio_setup:
 
 # a0 - pin
 # a1 - drive mode
+.globl asm_gpio_set_drive_mode
 asm_gpio_set_drive_mode:
     addi sp, sp, -32
     sd ra, 24(sp)
@@ -107,6 +108,7 @@ asm_gpio_set_drive_mode:
 
 # a0 - pin
 # a1 - value
+.globl asm_gpio_set_pin
 asm_gpio_set_pin:
     addi sp, sp, -16
     sd ra, 8(sp)
@@ -138,6 +140,7 @@ asm_gpio_set_pin:
 # a0 - register address
 # a1 - bit
 # a2 - value
+.globl asm_gpio_set_bit
 asm_gpio_set_bit:
     addi sp, sp, -16
     sd ra, 8(sp)

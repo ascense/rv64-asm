@@ -1,9 +1,9 @@
 .section .text
-.balign 8
-.global main
+.balign 4
 
 .include "gpio.inc"
 
+.globl main
 main:
     call gpio_setup
 

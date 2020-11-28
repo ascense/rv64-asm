@@ -1,10 +1,10 @@
 .section .text
-.balign 8
-.global delay
+.balign 4
 
 .include "util.inc"
 
 # a0 - ms to sleep
+.globl delay
 delay:
     addi sp, sp, -32
     sd ra, 24(sp)
